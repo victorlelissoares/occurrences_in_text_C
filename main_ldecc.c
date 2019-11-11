@@ -8,9 +8,10 @@ int main (int argc, char *argv[]) {
 	/*I controlará a abertura de arquivos e , j andará no vetor da linha de comando, 
 	atribuindo o nome de cada aquivo para a função de abertura*/
 	int i=0, j = 2;
+	no *p;
 	FILE *arquivos[argc-2];
 	char palavra[MAX];
-
+	FILE *saida;
 	ldecc *lista;
 
 	lista = cria_nova_ldecc();
@@ -21,15 +22,11 @@ int main (int argc, char *argv[]) {
 			printf("Entrada inválida!\n");
 			return 0;
 		}
-		else{
-			printf("arquivo %d aberto com sucesso!\n", i);
-		}
 		i++;
 		j++;
 	}
 	//após isso, terá aberto todos os arquvos ou, terá encerrado
 
-	imprime_ldecc(lista, num_arquivos);
 
 	for(i=0; i < num_arquivos; i++){
 		while(!feof(arquivos[i])){
@@ -39,7 +36,15 @@ int main (int argc, char *argv[]) {
 		}
 	}
 
-	imprime_ldecc(lista, num_arquivos);
+	saida = fopen("meuresultado.out", "w+");
+
+	for(p=lista->cabeca->prox; p != NULL; p = p->prox){
+		fprintf(saida,"%s", p->chave);
+		for(i=0; i<num_arquivos; i++){
+			fprintf(saida, " %d", p->ocorrencias[i]);
+		}
+		fprintf(saida, "\n");
+	}
 
 	return 0;
 }
