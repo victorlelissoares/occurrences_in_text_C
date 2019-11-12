@@ -1,5 +1,5 @@
 # occurrences_in_text_C
-Trabalho de Algoritmos e programação 2
-Compile usando clang -Wall -o trabalho *.c ou gcc -Wall -o trabalho *.c
+<h1>Trabalho de Algoritmos e programação 2</h1>
+Compile usando <b>clang -Wall -o trabalho *.c ou gcc -Wall -o trabalho *.c</b>
 Execute-o usando ./trabalho num_arquivos arquivo1 arquivo2...arquivon
-Por exemplo: ./trabalho 2 texto1.txt texto2.txt
+<b>Por exemplo: ./trabalho 2 texto1.txt texto2.txt<b>
