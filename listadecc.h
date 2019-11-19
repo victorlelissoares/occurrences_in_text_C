@@ -13,7 +13,7 @@ typedef struct ldecc_st ldecc;
 
 //definição de funções
 ldecc *cria_nova_ldecc();
-void imprime_ldecc(ldecc *lista, int num_arquivos);
-char* converte_lw(char frase[MAX]);
-void insere_ordenado_ldecc(ldecc *lista, char palavra[MAX], int num_arquivos, int arq_atual);
-int get_size(char* file_name);
+void imprime_ldecc(ldecc *, int );
+char* converte_lw(char *);
+void insere_ordenado_ldecc(ldecc *, char *, int , int );
+int get_size(char* );
